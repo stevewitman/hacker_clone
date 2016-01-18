@@ -9,5 +9,10 @@ angular.module('hackerClone', [])
 			{title: 'post 4', upvotes: 9},
 			{title: 'post 5', upvotes: 4},
 		];
+		$scope.addPost = function() {
+			if(!$scope.title || $scope.title === '') {return;}
+			$scope.posts.push({title: $scope.title, upvotes: 0});
+			$scope.title = '';
+		};
 	}
 ]);
